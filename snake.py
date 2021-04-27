@@ -1,4 +1,5 @@
 from turtle import Turtle
+import time
 
 STARTING_POSITIONS = [(0, 0), (-10, 0), (-20, 0)]
 MOVE_DISTANCE = 10
@@ -6,6 +7,7 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+SPEED = 0.05
 
 
 class Snake:
@@ -31,6 +33,7 @@ class Snake:
         self.add_segment(self.segments[-1].position())
 
     def move(self):
+        time.sleep(SPEED)
         for seg_number in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_number - 1].xcor()
             new_y = self.segments[seg_number - 1].ycor()
